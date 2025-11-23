@@ -16,16 +16,41 @@ Easily install macOS on Proxmox VE with just a few steps! This guide provides th
 
 ## 🛠 Installation Guide
 
-1. Install a **FRESH/CLEAN** version of Proxmox VE (v7.0.XX ~ 8.4.XX) - just follow the Next, Next & Finish (NNF) approach.
-   * Preliminary support for Proxmox VE V9.0.0 BETA.
-2. Open the **Proxmox Web Console** → Navigate to `Datacenter > YOUR_HOST_NAME > Shell`.
-3. Copy, paste, and execute the command below:
+1. Install a **FRESH/CLEAN** version of Proxmox VE (7.x or 8.x – preliminary 9.x support) and finish the basic wizard.
+2. Log in to the **Proxmox Web Console**, open `Datacenter > YOUR_HOST_NAME > Shell`, and elevate to `root` (the installer exits if you are not root).
+3. Download and run the installer script that lives in **this repository**:
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://install.osx-proxmox.com)"
+curl -fsSL https://raw.githubusercontent.com/braffour/OSX-PROXMOX/refs/heads/main/install.sh -o install-osx-proxmox.sh
+chmod +x install-osx-proxmox.sh
+./install-osx-proxmox.sh
 ```
 
-🎉 Voilà! You can now install macOS!
+> 💡 Replace the URL above with the raw `install.sh` from your fork if you maintain one.
+
+### What the script does
+
+- Cleans up old `/etc/apt/sources.list.d/*` entries, installs `git`, and clones the repo into `/root/OSX-PROXMOX`.
+- Streams all output to `/root/install-osx-proxmox.log` so you can `tail -f` it from another session if desired.
+- Runs the interactive `setup` menu, where you will:
+  - Select the storage that will hold ISO/recovery media.
+  - Install prerequisite packages, configure GRUB/IOMMU/VFIO, and optionally reboot if the host still needs those changes.
+  - Download at least one `recovery-<version>.iso` (options `101/102` inside the menu) and refresh the bundled OpenCore ISO (option `201`) so macOS can boot.
+- Verifies (via `ensure_boot_media_ready`) that `${ISODIR}` now contains `opencore-osx-proxmox-vm.iso` **and** at least one `recovery-*.iso`. If either artifact is missing, the installer tells you exactly which menu option to re-run and exits safely.
+
+### Menu quick reference
+
+- Options **1–8**: create macOS VMs (High Sierra → Sequoia). You will set VM ID, name, storage, bridge, CPU/RAM, and disk size.
+- Option **200**: add the Proxmox no-subscription repository.
+- Option **201**: download/update the OpenCore ISO (required once per host or whenever you want the latest EFI).
+- Option **202**: delete all cached recovery ISOs.
+- Option **203**: remove the “No Subscription” nag banner from the UI.
+- Option **204**: add/configure extra Proxmox bridges (used for cloud-style deployments).
+- Option **205**: customize OpenCore `config.plist` (SMBIOS, boot-args, SIP, etc.).
+
+If the installer stops with “Boot media missing,” just re-run `/root/OSX-PROXMOX/setup`, choose option `201`, then the recovery option for your macOS version, and rerun the installer script. Once boot media is detected, it will finish automatically and you can immediately create VMs from the menu.
+
+🎉 After the menu completes without errors, you are ready to install macOS!
 ![osx-terminal](https://github.com/user-attachments/assets/ea81b920-f3e2-422e-b1ff-0d9045adc55e)
 ---
 
