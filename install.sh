@@ -73,7 +73,7 @@ ensure_boot_media_ready() {
         return 1
     fi
 
-    if ! compgen -G "${iso_dir}/recovery-"*.iso >/dev/null 2>&1; then
+    if ! compgen -G "${iso_dir}/recovery-*.iso" >/dev/null 2>&1; then
         log_message "No recovery ISO found in '$iso_dir'. Run setup option '101/102 - Download & Create Recovery Image' for your macOS version."
         return 1
     fi
