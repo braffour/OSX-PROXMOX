@@ -34,7 +34,7 @@ chmod +x install-osx-proxmox.sh
   - Select the storage that will hold ISO/recovery media.
   - Install prerequisite packages, configure GRUB/IOMMU/VFIO, and optionally reboot if the host still needs those changes.
   - Download at least one `recovery-<version>.iso` (options `101/102` inside the menu) and refresh the bundled OpenCore ISO (option `201`) so macOS can boot.
-- Verifies (via `ensure_boot_media_ready`) that `${ISODIR}` now contains `opencore-osx-proxmox-vm.iso` **and** at least one `recovery-*.iso`. If either artifact is missing, the installer tells you exactly which menu option to re-run and exits safely.
+- Verifies (via `ensure_boot_media_ready`) that `${ISODIR}` now contains `LongQT-OpenCore-v0.5.iso` **and** at least one `recovery-*.iso`. If either artifact is missing, the installer tells you exactly which menu option to re-run and exits safely.
 
 ### Menu quick reference
 
