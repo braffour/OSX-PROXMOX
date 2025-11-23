@@ -130,6 +130,23 @@ clocksource: Switched to clocksource hpet
 
 [Read More](https://www.nicksherlock.com/2022/10/installing-macos-13-ventura-on-proxmox/comment-page-1/#comment-55532)
 
+### 🖥️ Westmere/Nehalem CPU Compatibility
+
+**For Westmere/Nehalem CPUs (e.g., Intel Xeon X5650, Core i7-9xx/8xx series):**
+
+- ✅ **Maximum macOS version: macOS 12 Monterey** (AVX2 instruction set required for macOS 13+)
+- ✅ **Recommended SMBIOS: MacPro6,1** (automatically suggested when Westmere/Nehalem is detected)
+- ✅ **Automatic CPU configuration:** The setup script automatically detects Westmere/Nehalem CPUs and applies appropriate CPU arguments (Penryn-based, no AVX2)
+- ✅ **Automatic boot-args:** `-nehalem_error_disable` is automatically added for MacPro6,1 SMBIOS
+
+The setup script will:
+- Detect your CPU generation automatically
+- Warn if you attempt to install macOS 13+ (Ventura/Sonoma/Sequoia) on Westmere/Nehalem
+- Suggest MacPro6,1 SMBIOS during OpenCore configuration
+- Apply Westmere-optimized CPU arguments automatically
+
+**For detailed setup instructions, see:** [Westmere/Nehalem Setup Guide](Artefacts/Westmere-MacPro6.1-Setup-Guide.md)
+
 ---
 
 ## 🔍 Troubleshooting
