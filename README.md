@@ -21,7 +21,7 @@ Easily install macOS on Proxmox VE with just a few steps! This guide provides th
 3. Download and run the installer script that lives in **this repository**:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/braffour/OSX-PROXMOX/refs/heads/cursor/analyse-the-code-repository-gpt-5.1-codex-high-3378/install.sh -o install-osx-proxmox.sh
+curl -fsSL https://raw.githubusercontent.com/braffour/OSX-PROXMOX/refs/heads/main/install.sh -o install-osx-proxmox.sh
 chmod +x install-osx-proxmox.sh
 ./install-osx-proxmox.sh
 ```

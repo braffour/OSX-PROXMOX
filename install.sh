@@ -116,7 +116,7 @@ check_status "Failed to install git"
 
 # Clone repository
 log_message "Cloning OSX-PROXMOX repository..."
-git clone --recurse-submodules https://github.com/braffour/OSX-PROXMOX.git --branch cursor/analyse-the-code-repository-gpt-5.1-codex-high-3378 "$SCRIPT_ROOT" >> "$LOG_FILE" 2>&1
+git clone --recurse-submodules https://github.com/braffour/OSX-PROXMOX.git --branch main "$SCRIPT_ROOT" >> "$LOG_FILE" 2>&1
 check_status "Failed to clone repository"
 
 # Ensure directory exists and setup is executable
