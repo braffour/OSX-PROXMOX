@@ -48,7 +48,7 @@ MAX_CORES=16
 DHCP_CONF_DIR="/etc/dhcp/dhcpd.d"
 NETWORK_INTERFACES_FILE="/etc/network/interfaces"
 DHCP_USER="dhcpd"
-OPENCORE_ISO="opencore-osx-proxmox-vm.iso"
+OPENCORE_ISO="LongQT-OpenCore-v0.5.iso"
 
 # macOS version configuration
 declare -A MACOS_CONFIG=(
@@ -846,7 +846,7 @@ customize_opencore_config() {
 update_opencore_iso() {
   local iso_path
   local logfile="${LOGDIR}/update-opencore-iso.log"
-  local iso_url="https://github.com/braffour/OSX-PROXMOX/raw/cursor/analyse-the-code-repository-gpt-5.1-codex-high-3378/EFI/opencore-osx-proxmox-vm.iso"
+  local iso_url="https://github.com/braffour/OSX-PROXMOX/raw/cursor/analyse-the-code-repository-gpt-5.1-codex-high-3378/EFI/LongQT-OpenCore-v0.5.iso"
   iso_path="${ISODIR}/${OPENCORE_ISO}"
   oc_json_path="${ISODIR}/.smbios.json"
 

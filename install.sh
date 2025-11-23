@@ -36,7 +36,7 @@ check_status() {
 # Paths and artefacts managed by setup
 SCRIPT_ROOT="/root/OSX-PROXMOX"
 LOG_DIR="${SCRIPT_ROOT}/logs"
-OPENCORE_ISO="opencore-osx-proxmox-vm.iso"
+OPENCORE_ISO="LongQT-OpenCore-v0.5.iso"
 
 # Discover ISO directory from setup logs
 detect_iso_dir() {
