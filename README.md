@@ -2,10 +2,10 @@
   
 # 🚀 OSX-PROXMOX - Run macOS on ANY Computer (AMD & Intel)
 
-![GitHub stars](https://img.shields.io/github/stars/luchina-gabriel/osx-proxmox?style=flat-square)
-![GitHub forks](https://img.shields.io/github/forks/luchina-gabriel/OSX-PROXMOX?style=flat-square)
-![GitHub license](https://img.shields.io/github/license/luchina-gabriel/osx-proxmox?style=flat-square)
-![GitHub issues](https://img.shields.io/github/issues/luchina-gabriel/osx-proxmox?style=flat-square)
+![GitHub stars](https://img.shields.io/github/stars/braffour/OSX-PROXMOX?style=flat-square)
+![GitHub forks](https://img.shields.io/github/forks/braffour/OSX-PROXMOX?style=flat-square)
+![GitHub license](https://img.shields.io/github/license/braffour/OSX-PROXMOX?style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues/braffour/OSX-PROXMOX?style=flat-square)
 
 </div>
 
@@ -21,12 +21,10 @@ Easily install macOS on Proxmox VE with just a few steps! This guide provides th
 3. Download and run the installer script that lives in **this repository**:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/braffour/OSX-PROXMOX/refs/heads/main/install.sh -o install-osx-proxmox.sh
+curl -fsSL https://raw.githubusercontent.com/braffour/OSX-PROXMOX/refs/heads/cursor/analyse-the-code-repository-gpt-5.1-codex-high-3378/install.sh -o install-osx-proxmox.sh
 chmod +x install-osx-proxmox.sh
 ./install-osx-proxmox.sh
 ```
-
-> 💡 Replace the URL above with the raw `install.sh` from your fork if you maintain one.
 
 ### What the script does
 

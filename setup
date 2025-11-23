@@ -846,7 +846,7 @@ customize_opencore_config() {
 update_opencore_iso() {
   local iso_path
   local logfile="${LOGDIR}/update-opencore-iso.log"
-  local iso_url="https://github.com/luchina-gabriel/OSX-PROXMOX/raw/main/EFI/opencore-osx-proxmox-vm.iso"
+  local iso_url="https://github.com/braffour/OSX-PROXMOX/raw/cursor/analyse-the-code-repository-gpt-5.1-codex-high-3378/EFI/opencore-osx-proxmox-vm.iso"
   iso_path="${ISODIR}/${OPENCORE_ISO}"
   oc_json_path="${ISODIR}/.smbios.json"
 
